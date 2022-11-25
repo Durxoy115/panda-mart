@@ -1,45 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import banner1 from "../../images/banner-1_1_optimized.jpg";
-import banner2 from "../../images/banner-02.jpg";
-import banner3 from "../../images/banner-03.jpg";
+import banner1 from "../../images/banner1_2.png";
+// import banner2 from "../../images/banner-02.jpg";
+// import banner3 from "../../images/banner-03.jpg";
 
 const Carousel = () => {
   return (
-    <div>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src={banner1} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle text-white">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src={banner2} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src={banner3} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
+    <div class="hero min-h-screen bg-base-100">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <img src={banner1} class="w-100 rounded-lg lg:ml-44" />
+        <div>
+          <h1 class="text-5xl font-bold">Your Journey Start From Here!</h1>
+          <p class="py-6 font-bold "></p>
+          <a href="/products">
+            <button class="btn btn-primary">Shop Now</button>
+          </a>
         </div>
       </div>
     </div>
