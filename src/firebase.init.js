@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCwpCyv6Vss207URj9aajcuGqvCfqOCzPM",
-  authDomain: "toolsite-82cbd.firebaseapp.com",
-  projectId: "toolsite-82cbd",
-  storageBucket: "toolsite-82cbd.appspot.com",
-  messagingSenderId: "627715789380",
-  appId: "1:627715789380:web:4c8f8dc80fe51574b5e211"
+  apiKey: "AIzaSyApcT8guoOsLOkZDE0fq4ZgXH01LQGtHo4",
+  authDomain: "panda-mart-durjoy.firebaseapp.com",
+  projectId: "panda-mart-durjoy",
+  storageBucket: "panda-mart-durjoy.appspot.com",
+  messagingSenderId: "631826235726",
+  appId: "1:631826235726:web:e4a3d2a2aea59c42c91e1f",
 };
 
 // Initialize Firebase

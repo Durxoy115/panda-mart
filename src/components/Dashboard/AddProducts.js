@@ -10,7 +10,7 @@ const AddProducts = () => {
       description: e.target.description.value,
       price: e.target.price.value,
       quantity: e.target.quantity.value,
-      min_order: e.target.min_order.value,
+      category: e.target.category.value,
       img: e.target.image.value,
     };
 
@@ -82,12 +82,12 @@ const AddProducts = () => {
             />
 
             <label className="label">
-              <span className="label-text">Minimum Order</span>
+              <span className="label-text">Category</span>
             </label>
             <input
-              name="min_order"
-              type="number"
-              placeholder="Minimum Order"
+              name="category"
+              type="text"
+              placeholder="Category"
               className="input input-bordered input-info input-sm w-full "
             />
 

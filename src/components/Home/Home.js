@@ -13,6 +13,14 @@ const Home = () => {
   const [review] = useReviews();
   return (
     <div>
+      {/* <div>
+        <input type="text" placeholder="search" />
+        {
+          products.map(product =>{
+
+          })
+        }
+      </div> */}
       <Carousel></Carousel>
 
       <section className="mt-14">
@@ -23,12 +31,18 @@ const Home = () => {
           <div className="divider w-1/3 mt-0"></div>
         </div>
         <div className=" mt-6 card grid gap-14  md:grid-cols-2 lg:grid-cols-3 bg-base-100 p-3 lg:p-10">
-          {products.map((product) => (
-            <Products key={product._id} product={product}></Products>
-          )).reverse().slice(0,6)}
+          {products
+            .map((product) => (
+              <Products key={product._id} product={product}></Products>
+            ))
+            .reverse()
+            .slice(0, 6)}
         </div>
         <div className="text-center">
-          <Link to='/products' className="btn btn-accent font-semibold text-white">
+          <Link
+            to="/products"
+            className="btn btn-accent font-semibold text-white"
+          >
             Show All Products
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +64,8 @@ const Home = () => {
 
       <BusinessSummery></BusinessSummery>
 
-      
       <section className=" bg-gray-300 shadow-lg rounded-lg lg:m-10 lg:p-5 mb-10 mt-10">
-        <h1 className="text-center text-3xl font-bold mb-3" >
+        <h1 className="text-center text-3xl font-bold mb-3">
           Customer Reviews
         </h1>
         <div className=" grid gap-10  md:grid-cols-2 lg:grid-cols-3 lg:m-10">

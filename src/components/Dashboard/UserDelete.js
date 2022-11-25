@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const UserDelete = ({ userDelete, setUserDelete, refetch }) => {
   const { _id, email } = userDelete;
-
+  console.log(_id);
   const handleDelete = () => {
     const url = `http://localhost:5000/user/${_id}`;
     fetch(url, {

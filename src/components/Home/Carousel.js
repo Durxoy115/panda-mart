@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import banner1 from "../../images/banner-1.jpg";
+import banner1 from "../../images/banner-1_1_optimized.jpg";
 import banner2 from "../../images/banner-02.jpg";
 import banner3 from "../../images/banner-03.jpg";
 

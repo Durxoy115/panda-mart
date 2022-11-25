@@ -15,6 +15,9 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
+        <Link to="/products">Products</Link>
+      </li>
+      <li>
         <Link to="/blogs">Blogs</Link>
       </li>
       <li>
@@ -26,9 +29,9 @@ const Header = () => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
-      <li>
+      {/* <li>
         <Link to="/portfolio">Portfolio</Link>
-      </li>
+      </li> */}
     </>
   );
   return (
