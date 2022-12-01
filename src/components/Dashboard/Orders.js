@@ -18,9 +18,9 @@ const Orders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/order?email=${user.email}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://panda-mart-server.onrender.com/order?email=${user.email}`
+    ).then((res) => res.json())
   );
 
   if (isLoading) {

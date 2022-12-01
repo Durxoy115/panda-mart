@@ -11,7 +11,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(`http://localhost:5000/user`, {
+    fetch(`https://panda-mart-server.onrender.com/user`, {
       method: "GET",
       headers: { "content-type": "application/json" },
     }).then((res) => res.json())

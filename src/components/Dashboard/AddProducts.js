@@ -14,7 +14,7 @@ const AddProducts = () => {
       img: e.target.image.value,
     };
 
-    const url = `http://localhost:5000/addproduct`;
+    const url = `https://panda-mart-server.onrender.com/addproduct`;
     fetch(url, {
       method: "POST",
       headers: {

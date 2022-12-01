@@ -7,7 +7,7 @@ const UserRow = ({ user, index, refetch, setUserDelete }) => {
   const { email, photoURL } = user;
 
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://panda-mart-server.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
     })

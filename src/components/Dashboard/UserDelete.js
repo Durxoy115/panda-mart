@@ -5,7 +5,7 @@ const UserDelete = ({ userDelete, setUserDelete, refetch }) => {
   const { _id, email } = userDelete;
   console.log(_id);
   const handleDelete = () => {
-    const url = `http://localhost:5000/user/${_id}`;
+    const url = `https://panda-mart-server.onrender.com/user/${_id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

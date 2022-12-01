@@ -5,7 +5,7 @@ const DeleteModel = ({ orderDelete, setOrderDelete, refetch }) => {
   const { product_name, orderQuantity, _id } = orderDelete;
 
   const handleDelete = () => {
-    const url = `http://localhost:5000/order/${_id}`;
+    const url = `https://panda-mart-server.onrender.com/order/${_id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

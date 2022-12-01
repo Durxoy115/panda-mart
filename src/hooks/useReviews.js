@@ -4,7 +4,7 @@ const useReviews = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://panda-mart-server.onrender.com/review")
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, []);

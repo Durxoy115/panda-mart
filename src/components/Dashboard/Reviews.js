@@ -13,7 +13,7 @@ const Reviews = () => {
       email: e.target.email.value,
       message: e.target.message.value,
     };
-    const url = `http://localhost:5000/review`;
+    const url = `https://panda-mart-server.onrender.com/review`;
     fetch(url, {
       method: "POST",
       headers: {

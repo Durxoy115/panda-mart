@@ -3,25 +3,48 @@ import { useState } from "react";
 import useProduct from "../../hooks/useProduct";
 import Products from "../Home/Products";
 import search from "../../images/search.png";
+import { useEffect } from "react";
 
 const AllProducts = () => {
   const [products, setProducts] = useProduct();
-  const searchResult = [];
-  const handleSearch = () => {
-    const searchText = document.getElementById("searchText").value;
-    // const url = `https://floating-gorge-66618.herokuapp.com/book?name=${searchText}`;
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => setSearchResult(data));
-    products.map((p) => {
-      const lowName = p.name.toLowerCase();
-      if (searchText.toLowerCase().includes(lowName)) {
-        searchResult.push(p);
-      }
-    });
-    console.log(searchResult);
-    setProducts([]);
+  const [categorys, setCategory] = useState("");
+  const [search, setSearch] = useState("");
+  const [item, setItem] = useState([]);
+
+  const searchFilter = products?.filter((product) =>
+    product.name.toLowerCase().includes(search)
+  );
+
+  const categorySearch = products?.filter(
+    (product) => product.category === categorys
+  );
+
+  const reset = () => {
+    setCategory("");
+    setSearch("");
+    document.getElementById("searchText").value = "";
+    document.getElementById("select").value = "Select Category";
   };
+  // useEffect(() => {
+  //   if (categorySearch) {
+  //     setItem(categorySearch);
+  //   } else {
+  //     setItem(searchFilter);
+  //   }
+  // }, [categorySearch, searchFilter]);
+  // console.log(item);
+
+  // const handleSearch = () => {
+  //   const searchText = document.getElementById("searchText").value;
+  //   products.map((p) => {
+  //     const lowName = p.name.toLowerCase();
+  //     if (searchText.toLowerCase().includes(lowName)) {
+  //       searchResult.push(p);
+  //     }
+  //   });
+  //   console.log(searchResult);
+  //   setProducts([]);
+  // };
   return (
     <div>
       <div className="flex justify-center w-full items-center my-5">
@@ -32,19 +55,16 @@ const AllProducts = () => {
             id="searchText"
             type="text"
             placeholder="Enter Product Name"
+            onChange={(e) => setSearch(e.target.value)}
           />
-          {/* <button
-            onClick={handleSearch}
-            className="btn btn-ghost btn-xs hover:bg-transparent rounded-full"
-          >
-            <img className="w-16 rounded-full" src={search} alt="" />
-          </button> */}
         </div>
       </div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
+      <div class="flex justify-start ">
+        <div class="mb-3 xl:w-80 flex pl-3 ">
           <select
-            class="form-select appearance-none
+            id="select"
+            onChange={(e) => setCategory(e.target.value)}
+            class="form-select appearance-none 	
       block
       w-full
       px-3
@@ -61,13 +81,24 @@ const AllProducts = () => {
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             aria-label="Default select example"
           >
-            <option className="font-serif font-bold">Select Category</option>
-            {products.map((p) => (
-              <option className="font-serif font-bold" value={p.category}>
-                {p.category}
-              </option>
-            ))}
+            <option selected className="font-serif font-bold">
+              Select Category
+            </option>
+            <option value="phone" className="font-serif font-bold">
+              Phone
+            </option>
+            <option value="tool" className="font-serif font-bold">
+              Tool
+            </option>
+            <option value="camera" className="font-serif font-bold">
+              Camera
+            </option>
           </select>
+          <div>
+            <button className=" ml-3 btn btn-primary  " onClick={() => reset()}>
+              Reset
+            </button>
+          </div>
         </div>
       </div>
       <h1 className="text-center text-3xl font-extrabold font-serif mt-4">
@@ -77,9 +108,20 @@ const AllProducts = () => {
         <div className="divider w-1/3 mt-0"></div>
       </div>
       <div className=" mt-2  card grid gap-4 md:grid-cols-2 lg:grid-cols-4 bg-base-100 p-3 lg:p-10">
-        {products.map((product) => (
-          <Products key={product._id} product={product}></Products>
-        ))}
+        {search &&
+          searchFilter.map((product) => (
+            <Products key={product._id} product={product}></Products>
+          ))}
+        {categorys &&
+          !search &&
+          categorySearch.map((product) => (
+            <Products key={product._id} product={product}></Products>
+          ))}
+        {!search &&
+          !categorys &&
+          products.map((product) => (
+            <Products key={product._id} product={product}></Products>
+          ))}
       </div>
     </div>
   );

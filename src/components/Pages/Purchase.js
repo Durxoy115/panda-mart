@@ -12,7 +12,9 @@ const Purchase = () => {
     isLoading,
     refetch,
   } = useQuery("singleProduct", () =>
-    fetch(`http://localhost:5000/products/${id}`).then((res) => res.json())
+    fetch(`https://panda-mart-server.onrender.com/products/${id}`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -42,7 +44,7 @@ const Purchase = () => {
   //     orderQuantity >= singleProduct.min_order &&
   //     orderQuantity <= singleProduct.quantity
   //   ) {
-  //     const url = `http://localhost:5000/order`;
+  //     const url = `https://panda-mart-server.onrender.com/order`;
   //     fetch(url, {
   //       method: "POST",
   //       headers: {
@@ -72,7 +74,7 @@ const Purchase = () => {
   //     //update products quantity after make a order
   //     const quantity =
   //       parseInt(singleProduct.quantity) - parseInt(orderQuantity);
-  //     const url2 = `http://localhost:5000/products/${id}`;
+  //     const url2 = `https://panda-mart-server.onrender.com/products/${id}`;
   //     fetch(url2, {
   //       method: "PUT",
   //       headers: {

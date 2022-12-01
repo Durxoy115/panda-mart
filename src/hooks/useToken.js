@@ -11,7 +11,7 @@ const useToken = (user) => {
   const currentUser = { email: email, name: name, photoURL: photoURL };
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://panda-mart-server.onrender.com/user/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
