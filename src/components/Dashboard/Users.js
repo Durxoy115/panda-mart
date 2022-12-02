@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Loading/Loading";
 import UserDelete from "./UserDelete";
@@ -6,11 +7,7 @@ import UserRow from "./UserRow";
 
 const Users = () => {
   const [userDelete, setUserDelete] = useState(null);
-  const {
-    data: users,
-    isLoading,
-    refetch,
-  } = useQuery("users", () =>
+  const { data: users, isLoading, refetch } = useQuery("users", () =>
     fetch(`https://panda-mart-server.onrender.com/user`, {
       method: "GET",
       headers: { "content-type": "application/json" },

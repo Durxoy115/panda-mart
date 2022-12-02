@@ -1,4 +1,5 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { toast } from "react-toastify";
 import avatar from "../../images/avatar.png";

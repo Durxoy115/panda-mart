@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
@@ -7,14 +8,12 @@ const Purchase = () => {
   const navigate = useNavigate();
 
   //fetch data from products
-  const {
-    data: singleProduct,
-    isLoading,
-    refetch,
-  } = useQuery("singleProduct", () =>
-    fetch(`https://panda-mart-server.onrender.com/products/${id}`).then((res) =>
-      res.json()
-    )
+  const { data: singleProduct, isLoading, refetch } = useQuery(
+    "singleProduct",
+    () =>
+      fetch(
+        `https://panda-mart-server.onrender.com/products/${id}`
+      ).then((res) => res.json())
   );
 
   if (isLoading) {

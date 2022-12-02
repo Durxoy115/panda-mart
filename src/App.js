@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import React from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -44,9 +45,12 @@ function App() {
           <Route path="reviews" element={<Reviews></Reviews>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
-          <Route path="addproducts" element={<AddProducts></AddProducts>}></Route>
+          <Route
+            path="addproducts"
+            element={<AddProducts></AddProducts>}
+          ></Route>
         </Route>
-        
+
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route
