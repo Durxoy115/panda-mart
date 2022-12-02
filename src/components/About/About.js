@@ -7,13 +7,10 @@ const About = () => {
       <div>
         <img src={img} alt="" />
         <p className="p-10 text-justify">
-          Panda Mart, originated from Bangladesh, dedicates itself to develop
-          and manufacture high quality power tools and equipment with affordable
-          price.We own 2 factories and 3 warehouses, and cooperate with several
-          alliance ones. Our thorough management system,including manufacture,
-          product R&D, uniform packaging, and quality assurance processes,
-          enables us to successfully set up the world's largest retail chains.{" "}
-          <br />
+          Looking for the fastest way to get your electronic products? panda
+          Mart is our online shop that features your favourite brands. Pick from
+          mobile phone , camera and other electronic products are deliver in
+          just 2 days. <br />
           <br />
           Panda Mart has a group of experienced engineers and technicians. We
           collect market information and carry out R&D job accordingly. If you
@@ -35,9 +32,7 @@ const About = () => {
           quality ideology and working capabilities of all the staff.
           <br />
           <br />
-          We have advanced high-quality manufacturing equipments imported
-          ensuring to achieve 100% excellent quality and high customer
-          satisfaction.
+          We have advanced high-quality product to satisfied our client
         </p>
       </div>
     </div>
