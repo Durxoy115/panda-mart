@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useProduct from "../../hooks/useProduct";
 import useReviews from "../../hooks/useReviews";
+import Trust from "../Trust/Trust";
 import BusinessSummery from "./BusinessSummery";
 import Carousel from "./Carousel";
 import Contact from "./Contact";
@@ -75,6 +76,7 @@ const Home = () => {
             .slice(0, 3)}
         </div>
       </section>
+      <Trust></Trust>
 
       <Contact></Contact>
     </div>
